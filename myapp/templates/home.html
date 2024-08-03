@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Home</title>
+    
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        {% include 'navbar.html' %}
+        <h1>This is my website , GautamTech</h1>
+
+
+
+        <form action="/index/" method="POST">
+            {% csrf_token %}
+        <input type="checkbox" name="check">
+        <button >Send </button>
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, totam blanditiis! Modi consequatur, cupiditate alias libero voluptatem at pariatur quo consectetur cum provident a quae optio magnam omnis nam atque doloremque repellat aliquam harum natus officiis? Mollitia iure fugiat vero ducimus nobis ipsam numquam nihil sit. Reprehenderit culpa cum incidunt.</p>
+        <button>Sign Up</button>
+
+        <!--accessing dynamic values-->
+        {% if isActive %}
+       
+        <div>
+        <h1>TOday date is {{date}}</h1>
+        <h1>Name is {{name}}</h1>
+        <hr>
+        <h1>Student Data</h1>
+        <h2>Student name: {{student_data.student_name}}</h2>
+        <h2>Student college: {{student_data.student_college}}</h2>
+        <h2>Student city: {{student_data.student_city}}</h2>
+        <hr>
+        
+        <h1>Favorite Programs</h1>
+
+        {% for p in list_of_programs %}
+    
+        <h3>{{p}}</h3>
+        {% endfor %}
+    
+    </div>
+
+    
+    
+    
+    
+    
+    {% endif %}
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    
+</body>
+</html>
